@@ -1,8 +1,9 @@
 import moment from 'moment';
-import 'moment/locale/de'  // without this line it didn't work
+import 'moment/locale/de'
 moment.locale('de')
 
 
+//Weathercard function
 function Weathercard({ weathercarddata }) {
     return (
         <div className="card">

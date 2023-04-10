@@ -1,6 +1,3 @@
-//import Image from 'next/image'
-//import { Inter } from 'next/font/google'
-//import { useEffect, useState } from 'react';
 import Weathercard from '../components/weathercard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -8,7 +5,6 @@ import moment from 'moment';
 import 'moment/locale/de'
 moment.locale('de')
 
-//const inter = Inter({ subsets: ['latin'] })
 
 //coordinates of Graz
 const lat = "47.069833054";
@@ -35,7 +31,7 @@ export async function getServerSideProps() {
 }
 
 
-//
+//SwiperSlide containing the Weathercards
 export default function Home({ forecast, currentweather }) {
 
   return (
