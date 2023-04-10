@@ -3,20 +3,20 @@ import 'moment/locale/de'  // without this line it didn't work
 moment.locale('de')
 
 
-function Weathercard( {weathercarddata} ){
+function Weathercard({ weathercarddata }) {
     return (
-        <div class="card">
+        <div className="card">
             <h3>
-                {weathercarddata.name? (<>{weathercarddata.name}</>): (<>Vorschau</>)}
+                {weathercarddata.name ? (<>{weathercarddata.name}</>) : (<>Vorschau</>)}
             </h3>
             <p>
-                {moment(weathercarddata.dt*1000).format("dddd Do MMMM YYYY")}
+                {weathercarddata.dt_txt ? (moment(weathercarddata.dt * 1000).calendar()) : (moment(weathercarddata.dt * 1000).format("dddd Do MMMM YYYY"))}
             </p>
-            <div class="row">
-                <div class="column">
-                    <img src={`/icons/${weathercarddata.weather[0].icon}.svg`}  alt="Weather SVG" />
+            <div className="row">
+                <div className="column">
+                    <img src={`/icons/${weathercarddata.weather[0].icon}.svg`} alt="Weather SVG" />
                 </div>
-                <div class="column">
+                <div className="column">
                     <h1>
                         {weathercarddata.main.temp_max}°C
                     </h1>
@@ -30,7 +30,7 @@ function Weathercard( {weathercarddata} ){
                         Gefühlte Temperatur: {weathercarddata.main.feels_like}°C
                     </p>
                 </div>
-            </div> 
+            </div>
         </div>
     )
 }

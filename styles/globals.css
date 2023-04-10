@@ -51,6 +51,7 @@ p {
 .card {
   margin: 0 auto;
   margin-top: 5%;
+  margin-bottom: 5%;
   padding: 5px;
   width: 470px;
   height: 250px;
